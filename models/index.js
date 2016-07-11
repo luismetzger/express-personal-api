@@ -1,7 +1,7 @@
 'use strict';
 
 var mongoose = require("mongoose");
-mongoose.connect( process.env.MONGOLAB_URI ||
+mongoose.connect( process.env.MONGODB_URI ||
                   process.env.MONGOHQ_URL ||
                   "mongodb://localhost:27017/personal-api");
 
