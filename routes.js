@@ -37,9 +37,9 @@ router.use(express.static('public'));
  * HTML Endpoints
  */
 
-// router.get('/', function homepage(req, res) {
-//   res.sendFile(__dirname + '/views/index.html');
-// });
+router.get('/', function homepage(req, res) {
+  res.sendFile(__dirname + '/views/index.html');
+});
 
 
 /*
@@ -299,7 +299,7 @@ router.get('/profile', function(req, res) {
 /*
  * JSON GET all /destinations
  */
- router.get('/', function(req, res, next) {
+ router.get('/destinations', function(req, res, next) {
      Destination.find({})
                 .sort({createdAt: -1})
                 .exec(function(err, locations) {
@@ -312,7 +312,7 @@ router.get('/profile', function(req, res) {
  /*
   * JSON POST a new /destination
   */
-  router.post('/', function(req, res, next) {
+  router.post('/destinations', function(req, res, next) {
       var destination = new Destination(req.body);
       destination.save(function(err, destination) {
           if(err) return next(err);
@@ -328,7 +328,7 @@ router.get('/profile', function(req, res) {
   /*
    * JSON GET specific destination - /destinations/:dID
    */
-   router.get('/:dID', function(req, res, next) {
+   router.get('/destinations/:dID', function(req, res, next) {
        res.json(req.destination);
     //    res.json({
     //        response: 'You sent me a GET request for ID: ' + req.params.dID
@@ -338,7 +338,7 @@ router.get('/profile', function(req, res) {
    /*
     * JSON POST create a specific /:dID/locations
     */
-    router.post('/:dID/locations', function(req, res, next) {
+    router.post('/destinations/:dID/locations', function(req, res, next) {
         req.destination.status.push(req.body);
         req.destination.save(function(err, destination) {
             if(err) return next(err);
@@ -355,7 +355,7 @@ router.get('/profile', function(req, res) {
    /*
     * JSON PUT edit a specific /locations/:uID
     */
-    router.put('/:dID/locations/:uID', function(req, res) {
+    router.put('/destinations/:dID/locations/:uID', function(req, res) {
         // req.locations.update(req.body, function(err, result) {
         //     if(err) return next(err);
         //     res.json(result);
@@ -371,7 +371,7 @@ router.get('/profile', function(req, res) {
     /*
      * JSON DELETE a specifc /locations/:uID
      */
-     router.delete('/:dID/locations/:uID', function(req, res) {
+     router.delete('/destinations/:dID/locations/:uID', function(req, res) {
         //  req.locations.remove(function(err) {
         //      req.destination.save(function(err, question) {
         //          if(err) return next(err);
