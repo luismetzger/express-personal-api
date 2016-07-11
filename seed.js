@@ -68,12 +68,13 @@ var best_places_to_travel_2016 = [
 
 
 
-db.Destination.create(best_places_to_travel_2016, function(err, locations) {
-    if(err) {
-        return console.log('Error: ', err);
-    }
-});
+db.Destination.remove({}, function(err, albums){
 
-  console.log("Created new destination", locations._id)
-  process.exit(); // we're all done! Exit the program.
+  db.Destination.create(best_places_to_travel_2016, function(err, locations){
+    if (err) { return console.log('ERROR', err); }
+    console.log("all destinations:", locations);
+    console.log("created", locations.length, "locations");
+    process.exit();
+  });
+
 });
