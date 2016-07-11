@@ -76,7 +76,7 @@ router.get('/api', function api_index(req, res) {
             },
             {
                 method: "GET",
-                path: "/",
+                path: "/destinations",
                 destinations: [
                                   {
                                     "_id": "5783212b350b028e25e407ec",
@@ -219,12 +219,12 @@ router.get('/api', function api_index(req, res) {
             },
             {
                 method: "POST",
-                path: "/",
+                path: "/destinations",
                 destinations:[{}]
             },
             {
                 method: "GET",
-                path: "/:dID",
+                path: "/destinations/:dID",
                 _id: "5783212b350b028e25e407f4",
                 city: "Bozeman",
                 country: "Montana",
@@ -233,7 +233,7 @@ router.get('/api', function api_index(req, res) {
             },
             {
                 method: "POST",
-                path: "/:dID/locations",
+                path: "/destinations/:dID/locations",
                 _id: "5783212b350b028e25e407f4",
                 city: "Bozeman",
                 country: "Montana",
@@ -250,7 +250,7 @@ router.get('/api', function api_index(req, res) {
             },
             {
                 method: "PUT",
-                path: "/:dID/locations/:uID",
+                path: "/destinations/:dID/locations/:uID",
                 response: "You sent me a PUT request to destination: 57839be6ebfc38b229681b55",
                 destinationId: "5783212b350b028e25e407f4",
                 updatedId: "57839be6ebfc38b229681b55",
@@ -260,7 +260,7 @@ router.get('/api', function api_index(req, res) {
             },
             {
                 method: "DELETE",
-                path: "/:dID/locations/:uID",
+                path: "/destinations/:dID/locations/:uID",
                 response: "You sent me a DELETE request to destination ID: 57839be6ebfc38b229681b55",
                 destinationId: "5783212b350b028e25e407f4",
                 updatedId: "57839be6ebfc38b229681b55"
