@@ -49,10 +49,10 @@ router.get('/', function homepage(req, res) {
 router.get('/api', function api_index(req, res) {
   // TODO: Document all your api endpoints below
   res.json({
-    woops_i_has_forgot_to_document_all_my_endpoints: false, // CHANGE ME ;)
+    woops_i_has_forgot_to_document_all_my_endpoints: false,
     message: "Welcome to my personal api! Here's what you need to know!",
-    documentation_url: "https://github.com/example-username/express_self_api/README.md", // CHANGE ME
-    base_url: "http://YOUR-APP-NAME.herokuapp.com", // CHANGE ME
+    documentation_url: "https://github.com/luismetzger/express_self_api/README.md",
+    base_url: "https://ga-application-api.herokuapp.com/",
     endpoints: [
             {
                 method: "GET",
